@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../themeUI/ui.dart';
+import '../../../../ThemeUi/uitheme.dart';
+
 
 class EditPatientProfile3 extends StatefulWidget {
   const EditPatientProfile3({super.key});

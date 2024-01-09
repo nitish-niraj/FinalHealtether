@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../../themeUI/ui.dart';
+import '../../../../ThemeUi/uitheme.dart';
+
 
 class AddNewPatient1 extends StatefulWidget {
   const AddNewPatient1({super.key});

@@ -1,6 +1,6 @@
 import 'package:finalhealtether/screens/Records/Model/PatientsrecordlistModel.dart';
 import 'package:finalhealtether/screens/Records/Widget/PatientsRecordlistWidget.dart';
-import 'package:finalhealtether/themeUI/ui.dart';
+import '../../../ThemeUi/uitheme.dart';
 import 'package:flutter/material.dart';
 
 class PatientRecords extends StatefulWidget {

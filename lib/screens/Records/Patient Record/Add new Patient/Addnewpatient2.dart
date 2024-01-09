@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../themeUI/ui.dart';
+import '../../../../ThemeUi/uitheme.dart';
 
 class AddNewPatient2 extends StatefulWidget {
   const AddNewPatient2({super.key});

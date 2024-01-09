@@ -1,6 +1,5 @@
-import 'package:finalhealtether/themeUI/ui.dart';
 import 'package:flutter/material.dart';
-
+import '../../../ThemeUi/uitheme.dart';
 import 'appointment_details.dart';
 
 class Appointment extends StatefulWidget {

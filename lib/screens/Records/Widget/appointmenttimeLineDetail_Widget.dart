@@ -1,7 +1,6 @@
 import 'package:finalhealtether/screens/Records/Model/appointment_TimeLine.dart';
-import 'package:finalhealtether/themeUI/ui.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import '../../../ThemeUi/uitheme.dart';
 
 
 Widget appointTimeLineWidget(BuildContext context, apponitmentTimeLineModel data){

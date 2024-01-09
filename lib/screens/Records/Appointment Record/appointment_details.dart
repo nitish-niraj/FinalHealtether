@@ -1,10 +1,11 @@
 import 'package:finalhealtether/screens/Records/Model/appointment_TimeLine.dart';
 import 'package:finalhealtether/screens/Records/Widget/appointmenttimeLineDetail_Widget.dart';
-import 'package:finalhealtether/themeUI/ui.dart';
+
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'dart:ui';
 
+import '../../../ThemeUi/uitheme.dart';
 import 'appointment.dart';
 
 class AppointmentDetails extends StatefulWidget {
