@@ -1,5 +1,7 @@
 import 'dart:ui';
 
+import 'package:finalhealtether/screens/Home/Screens/AppointmentScreen/appointment_screen.dart';
+import 'package:finalhealtether/screens/Home/Screens/HomeScreen/drawer_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -25,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         elevation: 0,
         actions: [
-          Image.asset('assets/Frame 129.png'),
+          Image.asset('assets/homeimages/Frame 129.png'),
           SizedBox(
             width: 80,
           ),
@@ -159,7 +161,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               text1: 'Patient',
                               text2: 'Records',
                               desc: 'Maintain and manage Patient records.',
-                              image: 'assets/Vector (2).png'),
+                              image: 'assets/homeimages/Vector (2).png'),
                         ),
                       ),
                     ),
@@ -171,8 +173,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: MyCard(
                               text1: 'Start',
                               text2: 'Consultation',
-                              desc: 'Maintain and manage Patient records.',
-                              image: 'assets/Component 2.png'),
+                              desc: 'Maintain and manage your Staff records.',
+                              image: 'assets/homeimages/Component 2.png'),
                         ),
                       ),
                     ),
@@ -188,8 +190,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: MyCard(
                               text1: 'Payment',
                               text2: 'Records',
-                              desc: 'Maintain and manage Patient records.',
-                              image: 'assets/Vector (1).png'),
+                              desc: 'Records of your payments.',
+                              image: 'assets/homeimages/Vector (1).png'),
                         ),
                       ),
                     ),
@@ -201,8 +203,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: MyCard(
                               text1: 'Manage',
                               text2: 'Staff',
-                              desc: 'Maintain and manage Patient records.',
-                              image: 'assets/Component 2.png'),
+                              desc: 'Maintain and manage Staff records.',
+                              image: 'assets/homeimages/Component 2.png'),
                         ),
                       ),
                     ),
@@ -214,7 +216,9 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       bottomNavigationBar: BottomBar(),
-      drawer: Drawer(),
+      drawer: Drawer(
+        child: DrawerMenu(),
+      ),
       floatingActionButton: FloatingActionButton(
         shape: CircleBorder(),
         backgroundColor: Color(0xff32856E),
@@ -366,7 +370,7 @@ class _BottomBarState extends State<BottomBar> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset('assets/Group.png'),
+                  Image.asset('assets/homeimages/Group.png'),
                   Text(
                     'Home',
                     style: GoogleFonts.montserrat(fontSize: 10),
@@ -376,9 +380,15 @@ class _BottomBarState extends State<BottomBar> {
             ),
           ),
           InkWell(
-            onTap: () => setState(() {
-              _selectedIndex = 1;
-            }),
+            onTap: () {
+              setState(() {
+                _selectedIndex = 1;
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) {
+                  return AddAppoint();
+                }));
+              });
+            },
             child: Container(
               height: 60,
               width: 84,
@@ -391,7 +401,7 @@ class _BottomBarState extends State<BottomBar> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset('assets/Group (1).png'),
+                  Image.asset('assets/homeimages/Group (1).png'),
                   Text(
                     'Appointments',
                     style: GoogleFonts.montserrat(fontSize: 10),
@@ -416,7 +426,7 @@ class _BottomBarState extends State<BottomBar> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset('assets/Vector (4).png'),
+                  Image.asset('assets/homeimages/Vector (4).png'),
                   Text(
                     'Chat',
                     style: GoogleFonts.montserrat(fontSize: 10),
@@ -441,7 +451,7 @@ class _BottomBarState extends State<BottomBar> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset('assets/Vector (5).png'),
+                  Image.asset('assets/homeimages/Vector (5).png'),
                   Text(
                     'Notifications',
                     style: GoogleFonts.montserrat(fontSize: 10),
