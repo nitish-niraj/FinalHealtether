@@ -1,4 +1,4 @@
-import 'package:finalhealtether/screens/Home/home_screen.dart';
+import 'package:finalhealtether/screens/Home/Screens/HomeScreen/home_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'ThemeUi/uitheme.dart';

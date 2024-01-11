@@ -177,7 +177,7 @@ packages:
     source: hosted
     version: "6.1.0"
   hexagon:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: hexagon
       sha256: "058f445a8c293c2a0474546cd6f592693bf8b014f5c682e8174d34d5fd024d87"
