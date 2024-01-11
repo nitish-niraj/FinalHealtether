@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../ThemeUi/uitheme.dart';
+import '../../../../ThemeUi/uitheme.dart';
 
-
-class StaffDetails extends StatefulWidget {
-  const StaffDetails({super.key});
+class MemberProfile extends StatefulWidget {
+  const MemberProfile({super.key});
 
   @override
-  State<StaffDetails> createState() => _StaffDetailsState();
+  State<MemberProfile> createState() => _MemberProfileState();
 }
 
-class _StaffDetailsState extends State<StaffDetails> {
+class _MemberProfileState extends State<MemberProfile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,7 +75,7 @@ class _StaffDetailsState extends State<StaffDetails> {
                             EdgeInsets.only(left: 0, right: 20, top: 48),
                             child: ClipOval(
                               child: Image.asset(
-                                'assets/images/ellipse-759-bg.png',
+                                'assets/images/ellipse-759-bg-Hwb.png',
                                 height: 120,
                                 width: 120,
                                 fit: BoxFit.cover,
@@ -829,36 +828,36 @@ class _StaffDetailsState extends State<StaffDetails> {
                 SizedBox(
                   height: 14,
                 ),
-              Column(
-                mainAxisAlignment:MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Receipts:',
-                    style: GoogleFonts.arimo(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xFF6D6D6D),
+                Column(
+                  mainAxisAlignment:MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Receipts:',
+                      style: GoogleFonts.arimo(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF6D6D6D),
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 4,),
-                  Text(
-                    'Salary_aug23',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: AppColors.primary
+                    SizedBox(height: 4,),
+                    Text(
+                      'Salary_aug23',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: AppColors.primary
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 4,),
-                  Text(
-                    'Salary_july23',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: AppColors.primary
+                    SizedBox(height: 4,),
+                    Text(
+                      'Salary_july23',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: AppColors.primary
+                      ),
                     ),
-                  ),
-                ],
-              ),
+                  ],
+                ),
                 SizedBox(height: 14,),
               ]),
         ),
