@@ -562,7 +562,7 @@ class _EditProfile2State extends State<EditProfile2> {
                             width: 358 * fem,
                             height: 59 * fem,
                             decoration: BoxDecoration(
-                              color: Color(0xff03bf9c),
+                              color: AppColors.primary,
                               borderRadius: BorderRadius.circular(7 * fem),
                             ),
                             child: Container(
