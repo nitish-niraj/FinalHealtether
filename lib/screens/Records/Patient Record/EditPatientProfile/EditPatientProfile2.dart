@@ -1,3 +1,4 @@
+import 'package:finalhealtether/screens/Records/Patient%20Record/EditPatientProfile/EditPatientProfile3.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../ThemeUi/uitheme.dart';
@@ -24,7 +25,7 @@ class _EditPatientProfile2State extends State<EditPatientProfile2> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Add Member',
+          'Edit Profile',
           style: TextStyle(
             color: Colors.black,
             fontSize: 20,
@@ -457,10 +458,10 @@ class _EditPatientProfile2State extends State<EditPatientProfile2> {
                         ),
                         InkWell(
                           onTap: () {
-                            // Navigator.push(
-                            //     context,
-                            //     MaterialPageRoute(
-                            //         builder: (context) => EditMemberScreen2()));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => EditPatientProfile3()));
                           },
                           child: Container(
                             // buttons9ru (126:5006)

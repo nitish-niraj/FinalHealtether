@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../ThemeUi/uitheme.dart';
+import '../EditMember/EditProfile2.dart';
 
 class MemberProfile extends StatefulWidget {
   const MemberProfile({super.key});
@@ -29,7 +30,7 @@ class _MemberProfileState extends State<MemberProfile> {
               color: Colors.black,
             )),
         title: Text(
-          'Manage Staff',
+          'Staff Records',
           style: GoogleFonts.arimo(
               fontSize: 20, color: Colors.black, fontWeight: FontWeight.bold),
         ),
@@ -139,21 +140,26 @@ class _MemberProfileState extends State<MemberProfile> {
                                 SizedBox(
                                   height: 12,
                                 ),
-                                Container(
-                                  alignment: Alignment.center,
-                                  padding: EdgeInsets.symmetric(
-                                      vertical: 4, horizontal: 8),
-                                  height: 26,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(6),
-                                      color: AppColors.primary
-                                  ),
-                                  child: Text(
-                                    'Edit Profile',
-                                    style: GoogleFonts.arimo(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.normal,
-                                      color: Colors.white,
+                                InkWell(
+                                  onTap: (){
+                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>EditProfile2()));
+                                  },
+                                  child: Container(
+                                    alignment: Alignment.center,
+                                    padding: EdgeInsets.symmetric(
+                                        vertical: 4, horizontal: 8),
+                                    height: 26,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(6),
+                                        color: AppColors.primary
+                                    ),
+                                    child: Text(
+                                      'Edit Profile',
+                                      style: GoogleFonts.arimo(
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.normal,
+                                        color: Colors.white,
+                                      ),
                                     ),
                                   ),
                                 ),

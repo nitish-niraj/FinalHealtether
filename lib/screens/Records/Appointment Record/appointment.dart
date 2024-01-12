@@ -89,20 +89,18 @@ class _AppointmentState extends State<Appointment>
                           borderRadius: BorderRadius.circular(7),
                         ),
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 8.0),
-                        child: TextFormField(
-                          controller: null,
-                          decoration: InputDecoration(
-                              labelText: "Quick Search",
-                              border: InputBorder.none),
-                          style: TextStyle(
-                            color: Color(0xFF6A798A),
-                            fontSize: 16,
-                            fontStyle: FontStyle.italic,
-                            fontFamily: 'Poppins',
-                            fontWeight: FontWeight.w400,
-                          ),
+                      child: TextFormField(
+                        controller: null,
+                        decoration: InputDecoration(
+                           prefixIcon: Icon(Icons.search),
+                            labelText: "Quick Search",
+                            border: InputBorder.none),
+                        style: TextStyle(
+                          color: Color(0xFF6A798A),
+                          fontSize: 16,
+                          fontStyle: FontStyle.italic,
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.w400,
                         ),
                       ),
                     ),

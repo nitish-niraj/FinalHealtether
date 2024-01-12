@@ -1,3 +1,4 @@
+import 'package:finalhealtether/screens/Records/Patient%20Record/AddMedicalrecord.dart';
 import 'package:flutter/material.dart';
 
 import '../../../ThemeUi/uitheme.dart';
@@ -182,11 +183,13 @@ class _AddPrescriptionState extends State<AddPrescription> {
                     },
                   ),
                 ),
-                SizedBox(height: he*0.12,),
+
                 Container(
                   width: wi,
                   child: ElevatedButton(
-                    onPressed: (){},
+                    onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>AddMedicalrecord()));
+                    },
                     child: Text(
                       'NEXT',
                       style: TextStyle(

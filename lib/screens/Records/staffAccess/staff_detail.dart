@@ -1,3 +1,4 @@
+import 'package:finalhealtether/screens/Records/staffAccess/EditMember/EditProfile2.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -140,21 +141,26 @@ class _StaffDetailsState extends State<StaffDetails> {
                                 SizedBox(
                                   height: 12,
                                 ),
-                                Container(
-                                  alignment: Alignment.center,
-                                  padding: EdgeInsets.symmetric(
-                                      vertical: 4, horizontal: 8),
-                                  height: 26,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(6),
-                                      color: AppColors.primary
-                                  ),
-                                  child: Text(
-                                    'Edit Profile',
-                                    style: GoogleFonts.arimo(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.normal,
-                                      color: Colors.white,
+                                InkWell(
+                                  onTap: (){
+                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>EditProfile2()));
+                                  },
+                                  child: Container(
+                                    alignment: Alignment.center,
+                                    padding: EdgeInsets.symmetric(
+                                        vertical: 4, horizontal: 8),
+                                    height: 26,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(6),
+                                        color: AppColors.primary
+                                    ),
+                                    child: Text(
+                                      'Edit Profile',
+                                      style: GoogleFonts.arimo(
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.normal,
+                                        color: Colors.white,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -178,7 +184,7 @@ class _StaffDetailsState extends State<StaffDetails> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Appointment Slots',
+                      'Personal Details',
                       style: GoogleFonts.arimo(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,

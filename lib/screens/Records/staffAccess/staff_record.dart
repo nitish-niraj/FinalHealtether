@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../Model/staff_record_model.dart';
 import '../Widget/staff_record_widget.dart';
+import 'AddMember/Add_member_personal_details.dart';
 
 class StaffRecord extends StatefulWidget {
    StaffRecord({super.key});
@@ -186,6 +187,7 @@ class _StaffRecordState extends State<StaffRecord> {
                           ),
                         ),
                         onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>AddMemberPersonalDetails()));
                         },
                         child: Text(
                           'Add member',

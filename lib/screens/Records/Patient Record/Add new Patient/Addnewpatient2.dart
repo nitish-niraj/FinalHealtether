@@ -1,3 +1,4 @@
+import 'package:finalhealtether/screens/Records/Patient%20Record/Add%20new%20Patient/Addnewpatient3.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../ThemeUi/uitheme.dart';
@@ -456,10 +457,10 @@ class _AddNewPatient2State extends State<AddNewPatient2> {
                         ),
                         InkWell(
                           onTap: () {
-                            // Navigator.push(
-                            //     context,
-                            //     MaterialPageRoute(
-                            //         builder: (context) => EditMemberScreen2()));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => AddNewPatient3()));
                           },
                           child: Container(
                             // buttons9ru (126:5006)

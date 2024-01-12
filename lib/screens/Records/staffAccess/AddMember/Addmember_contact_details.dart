@@ -1,4 +1,5 @@
 import 'package:finalhealtether/ThemeUi/uitheme.dart';
+import 'package:finalhealtether/screens/Records/staffAccess/AddMember/Addmember_documents.dart';
 import 'package:flutter/material.dart';
 
 class AddMemberContactDetails extends StatefulWidget {
@@ -611,10 +612,10 @@ class _AddMemberContactDetailsState extends State<AddMemberContactDetails> {
                         ),
                         InkWell(
                           onTap: () {
-                            // Navigator.push(
-                            //     context,
-                            //     MaterialPageRoute(
-                            //         builder: (context) => Add_Member5()));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => AddMemberDocuments()));
                           },
                           child: Container(
                             // buttons9ru (126:5006)
