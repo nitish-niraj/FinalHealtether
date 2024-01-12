@@ -1,7 +1,8 @@
+import 'package:finalhealtether/screens/Home/Screens/Widgets/piechart_card.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../Widgets/piechart_card.dart';
+import 'package:pie_chart/pie_chart.dart';
 
 class AppointmentAnalysis extends StatefulWidget {
   const AppointmentAnalysis({super.key});
