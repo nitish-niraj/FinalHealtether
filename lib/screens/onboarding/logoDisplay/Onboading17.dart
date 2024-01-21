@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Onboarding15 extends StatelessWidget {
-  const Onboarding15({super.key});
+class Onboarding17 extends StatelessWidget {
+  const Onboarding17({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class Onboarding15 extends StatelessWidget {
           ),
         ),
         child: Center(
-           child: Image.asset('assets/Logo1.png',height:  60.08*he,width: 57.627*wi,),
+          child: Image.asset('assets/Logo3.png',height:  58*he,width: 260*wi,),
         ),
       ),
     );
