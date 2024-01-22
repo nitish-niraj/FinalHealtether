@@ -1,17 +1,17 @@
 import 'package:finalhealtether/ThemeUi/uitheme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-class Login1 extends StatelessWidget {
-  Login1({super.key});
+class Register3 extends StatelessWidget {
+  const Register3({super.key});
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController  PasswordCon = TextEditingController();
+    TextEditingController  ConfirmPassCon = TextEditingController();
     var he = MediaQuery.of(context).size.height/844;
     var wi = MediaQuery.of(context).size.width/389;
-    TextEditingController phoneCon = TextEditingController();
-    TextEditingController passwordCon = TextEditingController();
-    bool visMobileNumber = true;
-    bool visPassword = true;
+    bool  visConPassError = true;
+    bool  visPasswordError = true;
     bool EverThingIsCorrect = true;
     return Scaffold(
       body: Container(
@@ -22,58 +22,55 @@ class Login1 extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 38*he,),
+            SizedBox(height: 32*he,),
             Center(
-              child: Text('Login',style: GoogleFonts.montserrat(
-                fontSize: 32*he,
-                color: Colors.black,
-                fontWeight: FontWeight.normal
-              ),textAlign: TextAlign.center,
-              ),
-            ),
-            SizedBox(height: 16*he,),
-            Text('Enter your mobile number *',style: GoogleFonts.poppins(
-              fontWeight: FontWeight.w400,
-              fontSize: 16*wi,
-              color: Color(0xFF4B4B4B),
-            ),),
-            SizedBox(height: 8*he,),
-            SizedBox(
-              width: wi*358,
-              child: TextFormField(
-                controller: phoneCon,
-                keyboardType: TextInputType.number,
-                decoration: InputDecoration(
-                  hintText: 'Mobile number',
-                  fillColor: Color(0xFF908D9E).withOpacity(0.2),
-                  filled: true,
-                  hintStyle: TextStyle(color: Colors.grey),
-                  enabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide.none,
-                    borderRadius: BorderRadius.circular(0)
-                  ),
-                  focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide.none,
-                    borderRadius: BorderRadius.circular(0)
-                  ),
-                    contentPadding: EdgeInsets.all(16*he)
+              child: Text(
+                'Register',
+                style: GoogleFonts.montserrat(
+                    fontSize: 32*he,
+                    color: Colors.black,
+                    fontWeight: FontWeight.normal
                 ),
               ),
             ),
-            Visibility(
-              visible: visMobileNumber,
-                child:Column(
-                  children: [
-                    SizedBox(height: 8*he,),
-                    Text('The mobile number is incorrect, please try again!',style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 12*wi,
-                      color: Color(0xFFF02711),
-                    ),),
-                  ],
-                )
+            SizedBox(height: 16*he,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  height: 4.0, // Set the height of the line
+                  width: 112*wi,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(2),
+                    color: Color(0xFF52CFAC),
+                  ),// Set the width of the line
+                  // Set the color of the line
+                ),
+                Container(
+                  height: 4.0,
+                  width: 112*wi,// Set the height of the line
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(2),
+                    color: Color(0xFF52CFAC),
+                  ),// Set the color of the line
+                ),
+                Container(
+                  height: 4.0, // Set the height of the line
+                  width: 112*wi, // Set the width of the line
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(2),
+                    color: Color(0xFF52CFAC),
+                  ),// Set the color of the line
+                ),
+              ],
             ),
-            SizedBox(height: 8*he,),
+            SizedBox(height: 16*he,),
+            Text('Others',style: GoogleFonts.poppins(
+              fontWeight: FontWeight.w700,
+              fontSize: 16*wi,
+              color: Color(0xFF4B4B4B),
+            ),),
+            SizedBox(height: 16*he,),
             Text('Password *',style: GoogleFonts.poppins(
               fontWeight: FontWeight.w400,
               fontSize: 16*wi,
@@ -83,11 +80,11 @@ class Login1 extends StatelessWidget {
             SizedBox(
               width: wi*358,
               child: TextFormField(
-                controller: passwordCon ,
-                keyboardType: TextInputType.visiblePassword,
+                controller:  PasswordCon ,
+                keyboardType: TextInputType.name,
                 decoration: InputDecoration(
+                  suffixIcon: Icon(Icons.visibility_off_rounded,color: Colors.black,size:20*wi),
                     hintText: 'Password',
-                    suffixIcon: Icon(Icons.visibility_off_rounded,color: Colors.black,size: 20*wi,),
                     fillColor: Color(0xFF908D9E).withOpacity(0.2),
                     filled: true,
                     hintStyle: TextStyle(color: Colors.grey),
@@ -104,7 +101,7 @@ class Login1 extends StatelessWidget {
               ),
             ),
             Visibility(
-                visible: visPassword,
+                visible: visPasswordError,
                 child:Column(
                   children: [
                     SizedBox(height: 8*he,),
@@ -116,6 +113,50 @@ class Login1 extends StatelessWidget {
                   ],
                 )
             ),
+            SizedBox(height: 8*he,),
+            Text('Confirm Password *',style: GoogleFonts.poppins(
+              fontWeight: FontWeight.w400,
+              fontSize: 16*wi,
+              color: Color(0xFF4B4B4B),
+            ),),
+            SizedBox(height: 8*he,),
+            SizedBox(
+              width: wi*358,
+              child: TextFormField(
+                controller: ConfirmPassCon,
+                keyboardType: TextInputType.name,
+                decoration: InputDecoration(
+                    suffixIcon: Icon(Icons.visibility_off_rounded,color: Colors.black,size:20*wi),
+                    hintText: 'Confirm Password *',
+                    fillColor: Color(0xFF908D9E).withOpacity(0.2),
+                    filled: true,
+                    hintStyle: TextStyle(color: Colors.grey),
+                    enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.circular(0)
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.circular(0)
+                    ),
+                    contentPadding: EdgeInsets.all(16*he)
+                ),
+              ),
+            ),
+            Visibility(
+                visible: visConPassError,
+                child:Column(
+                  children: [
+                    SizedBox(height: 8*he,),
+                    Text('The password you entered is incorrect, please try again!',style: GoogleFonts.poppins(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 12*wi,
+                      color: Color(0xFFF02711),
+                    ),),
+                  ],
+                )
+            ),
+            SizedBox(height: 5*he,),
             Row(
               children: [
                 Text(
@@ -147,63 +188,23 @@ class Login1 extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(height: 16*he,),
-            Text('Forgot Password?',style: GoogleFonts.poppins(
-              fontWeight: FontWeight.w400,
-              fontSize: 16*wi,
-              color: Color(0xFF4B4B4B),
-            ),),
             SizedBox(height: 32*he,),
             SizedBox(
               width: wi*356,
               child: ElevatedButton(onPressed: (){},
-               child: Text('Log me in',style: GoogleFonts.montserrat(
-                 fontWeight: FontWeight.normal,
-                 fontSize: 16*he,
-                 color:   EverThingIsCorrect == true?Colors.white:Color(0xFFC2C2C2)
-               ),),
+                child: Text('Register',style: GoogleFonts.montserrat(
+                    fontWeight: FontWeight.normal,
+                    fontSize: 16*he,
+                    color: EverThingIsCorrect == true?Colors.white:Color(0xFFC2C2C2)
+                ),),
                 style: ElevatedButton.styleFrom(
-                  padding: EdgeInsets.all(16),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
+                    padding: EdgeInsets.all(16),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
                     backgroundColor: EverThingIsCorrect == true?AppColors.primary:Color(0xFFF5F5F5)
                 ),
               ),
-            ),
-            Spacer(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  'Don’t have an account?',style: GoogleFonts.poppins(
-                    fontSize: 12*he,
-                    fontWeight: FontWeight.normal,
-                    color: Color(0xFF747381)
-                ),
-                ),
-                SizedBox(width: 5*wi,),
-                Column(
-                  children: [
-                    Text(
-                      'Register here',style: GoogleFonts.poppins(
-                      fontSize: 16*he,
-                      fontWeight: FontWeight.normal,
-                      color: Color(0xFF5351C7),
-                    ),
-                    ),
-                    SizedBox(
-                      width: 117*wi,
-                      child: Divider(
-                        height: 0,
-                        thickness: 1,
-                        color: Color(0xFF5351C7),
-                      ),
-                    )
-                  ],
-                )
-              ],
             ),
           ],
         ),
