@@ -86,7 +86,7 @@ class _StaffRecordState extends State<StaffRecord> {
                       maxLines: 1,
                       inputFormatters: [LengthLimitingTextInputFormatter(40)],
                       decoration: InputDecoration(
-                          hintText: 'My clinic',
+                          hintText: 'Quick Search',
                           suffixIcon: Icon(Icons.arrow_drop_down,size: 30,color: Color(0xFF009394),),
                           enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10),
