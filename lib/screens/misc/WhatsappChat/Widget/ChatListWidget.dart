@@ -16,7 +16,7 @@ Widget ChatListWiget(BuildContext context,ChatListModel data){
      width: wi*358,
       child: Row(
         children: [
-           CircleAvatar(
+          ClipOval(
              child: Image.asset(data.image,height: 50,width: 50,),
            ),
           SizedBox(width: 10*wi,),

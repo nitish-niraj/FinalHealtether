@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../ThemeUi/uitheme.dart';
+
 class ChatList extends StatefulWidget {
   const ChatList({super.key});
 
@@ -58,6 +60,19 @@ class _ChatListState extends State<ChatList> {
               color: Colors.black,
             )),
       ),
+      floatingActionButton: Container(
+          width: 72*wi,
+          margin: EdgeInsets.symmetric(vertical: 21,horizontal: 20),
+          padding: EdgeInsets.all(20),
+          decoration: BoxDecoration(
+              color: AppColors.primary,
+              shape: BoxShape.circle
+          ),
+          child: ClipOval(
+              child: Image.asset(
+                'assets/images/floatadd.png',
+                fit: BoxFit.contain,height: 30*he,
+              ))),
       body: Container(
         padding: EdgeInsets.all(16),
         width: wi*389,
