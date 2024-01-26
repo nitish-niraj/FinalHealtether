@@ -24,6 +24,8 @@ class _PaymentSettingsState extends State<PaymentSettings> {
 
   @override
   Widget build(BuildContext context) {
+    var he = MediaQuery.of(context).size.height/844;
+    var wi = MediaQuery.of(context).size.width/389;
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -116,7 +118,7 @@ class _PaymentSettingsState extends State<PaymentSettings> {
               ),
               Container(
                 height: 60,
-                width: 320,
+                width: wi*389,
                 decoration: BoxDecoration(
                   color: Color(0xffEEEEEE),
                   borderRadius: BorderRadius.circular(3),
@@ -151,7 +153,7 @@ class _PaymentSettingsState extends State<PaymentSettings> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(right: 200),
+                        padding: EdgeInsets.only(right: wi*270),
                         child: Visibility(
                           visible: isStarVisible,
                           child: Text(
@@ -171,7 +173,7 @@ class _PaymentSettingsState extends State<PaymentSettings> {
               ),
               Container(
                 height: 60,
-                width: 320,
+                width: wi*389,
                 decoration: BoxDecoration(
                   color: Color(0xffEEEEEE),
                   borderRadius: BorderRadius.circular(3),
@@ -206,7 +208,7 @@ class _PaymentSettingsState extends State<PaymentSettings> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(right: 200),
+                        padding:EdgeInsets.only(right: wi*270),
                         child: Visibility(
                           visible: isStarVisible,
                           child: Text(
@@ -226,7 +228,7 @@ class _PaymentSettingsState extends State<PaymentSettings> {
               ),
               Container(
                 height: 60,
-                width: 320,
+                width: wi*389,
                 decoration: BoxDecoration(
                   color: Color(0xffEEEEEE),
                   borderRadius: BorderRadius.circular(3),
@@ -261,7 +263,7 @@ class _PaymentSettingsState extends State<PaymentSettings> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(right: 200),
+                        padding: EdgeInsets.only(right: wi*270),
                         child: Visibility(
                           visible: isStarVisible,
                           child: Text(
