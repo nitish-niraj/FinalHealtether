@@ -2,11 +2,19 @@ import 'dart:ui';
 
 import 'package:finalhealtether/screens/Home/Screens/AppointmentScreen/appointment_screen.dart';
 import 'package:finalhealtether/screens/Home/Screens/HomeScreen/drawer_menu.dart';
+import 'package:finalhealtether/screens/Records/Appointment%20Record/appointment.dart';
+import 'package:finalhealtether/screens/Records/Appointment%20Record/appointment_details.dart';
+import 'package:finalhealtether/screens/Records/Payment/paymentsrecordlist.dart';
+import 'package:finalhealtether/screens/misc/WhatsappChat/ChatList.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:percent_indicator/percent_indicator.dart';
+
+import '../../../Records/Patient Record/patientsrecord_list.dart';
+import '../../../Records/staffAccess/staff_record.dart';
+import '../../../misc/Notifications/Notifications.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -156,7 +164,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Padding(
                         padding: const EdgeInsets.all(5.0),
                         child: GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(context,MaterialPageRoute(builder: (context)=>PatientRecords()));
+                          },
                           child: MyCard(
                               text1: 'Patient',
                               text2: 'Records',
@@ -169,7 +179,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Padding(
                         padding: const EdgeInsets.all(5.0),
                         child: GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(context,MaterialPageRoute(builder: (context)=>Appointment()));
+                          },
                           child: MyCard(
                               text1: 'Start',
                               text2: 'Consultation',
@@ -186,7 +198,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Padding(
                         padding: const EdgeInsets.all(5.0),
                         child: GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(context,MaterialPageRoute(builder: (context)=>paymentRecordList()));
+                          },
                           child: MyCard(
                               text1: 'Payment',
                               text2: 'Records',
@@ -199,7 +213,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Padding(
                         padding: const EdgeInsets.all(5.0),
                         child: GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>StaffRecord()));
+                          },
                           child: MyCard(
                               text1: 'Manage',
                               text2: 'Staff',
@@ -385,7 +401,7 @@ class _BottomBarState extends State<BottomBar> {
                 _selectedIndex = 1;
                 Navigator.of(context)
                     .push(MaterialPageRoute(builder: (context) {
-                  return AddAppoint();
+                  return Appointment();
                 }));
               });
             },
@@ -413,6 +429,10 @@ class _BottomBarState extends State<BottomBar> {
           InkWell(
             onTap: () => setState(() {
               _selectedIndex = 2;
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) {
+                return ChatList();
+              }));
             }),
             child: Container(
               height: 60,
@@ -438,6 +458,10 @@ class _BottomBarState extends State<BottomBar> {
           InkWell(
             onTap: () => setState(() {
               _selectedIndex = 3;
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) {
+                return Notifications();
+              }));
             }),
             child: Container(
               height: 60,

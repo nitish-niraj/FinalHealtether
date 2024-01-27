@@ -21,9 +21,7 @@ class _StaffDetailsState extends State<StaffDetails> {
         backgroundColor: Colors.white,
         leading: InkWell(
             onTap: () {
-              // Navigator.pushReplacement(
-              //     // context, MaterialPageRoute(builder: (context) => Home())
-              //     );
+              Navigator.pop(context);
             },
             child: Icon(
               Icons.arrow_back,

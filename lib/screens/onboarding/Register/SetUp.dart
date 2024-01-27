@@ -1,3 +1,4 @@
+import 'package:finalhealtether/screens/Home/Screens/HomeScreen/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -32,11 +33,16 @@ class SetUp extends StatelessWidget {
               color: Colors.black
             ),),
             SizedBox(height: 6*he,),
-            Text('Let’s set up a clinic for you.',style: GoogleFonts.poppins(
-              fontWeight: FontWeight.w400,
-              fontSize: 16*wi,
-              color: Color(0xFF505050),
-            ),),
+            InkWell(
+              onTap: (){
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+              },
+              child: Text('Let’s set up a clinic for you.',style: GoogleFonts.poppins(
+                fontWeight: FontWeight.w400,
+                fontSize: 16*wi,
+                color: Color(0xFF505050),
+              ),),
+            ),
           ],
         )
       ),

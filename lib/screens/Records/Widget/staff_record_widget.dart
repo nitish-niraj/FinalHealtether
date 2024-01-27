@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../Model/staff_record_model.dart';
+import '../staffAccess/staff_detail.dart';
 
 
 Widget StaffRecordWidget(BuildContext context, StaffRecordModel data){
@@ -9,7 +10,7 @@ Widget StaffRecordWidget(BuildContext context, StaffRecordModel data){
     elevation: 1,
     child: InkWell(
       onTap: (){
-        // Navigator.push(context, MaterialPageRoute(builder: (context)=>StaffDetails()));
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>StaffDetails()));
       },
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 15,horizontal: 12),
@@ -49,14 +50,14 @@ Widget StaffRecordWidget(BuildContext context, StaffRecordModel data){
                   decoration: BoxDecoration(
                     borderRadius:
                     BorderRadius.all(Radius.circular(8)),
-                    color: Color(0xFF740AC7),
+                    color: Color(0xFFFADF49),
                   ),
                   child: Text(
                     data.Admin == true?"Admin": data.SuperAdmin == true?"Super Admin":"Guest",
                     style: TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.normal,
-                        color: Colors.white),
+                        color: Colors.black),
                   ),
                 ),
               ],

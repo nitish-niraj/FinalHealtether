@@ -1,4 +1,5 @@
 import 'package:finalhealtether/ThemeUi/uitheme.dart';
+import 'package:finalhealtether/screens/onboarding/Register/Register3.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -158,7 +159,9 @@ class Register2 extends StatelessWidget {
             SizedBox(height: 32*he,),
             SizedBox(
               width: wi*356,
-              child: ElevatedButton(onPressed: (){},
+              child: ElevatedButton(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>Register3()));
+              },
                 child: Text('Next',style: GoogleFonts.montserrat(
                     fontWeight: FontWeight.normal,
                     fontSize: 16*he,

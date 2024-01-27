@@ -1,4 +1,5 @@
 import 'package:finalhealtether/ThemeUi/uitheme.dart';
+import 'package:finalhealtether/screens/onboarding/logoDisplay/Onboarding%2019.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -109,7 +110,7 @@ class _onbording18State extends State<onbording18> {
                   size: 29,
                 ),
                 onPressed: () {
-
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>onbording19()));
                 },
               ),
             ),

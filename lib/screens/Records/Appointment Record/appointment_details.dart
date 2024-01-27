@@ -44,6 +44,7 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
               fontFamily: 'Poppins',
               fontWeight: FontWeight.w500,
             ),
+
           ),
           actions: [
             PopupMenuButton<String>(

@@ -1,3 +1,4 @@
+import 'package:finalhealtether/ThemeUi/uitheme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -206,4 +207,66 @@ class _StaffRecordState extends State<StaffRecord> {
       ),
     );
   }
+}
+
+
+showAlert(BuildContext context) {
+  showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        // var constraints;
+        return Center(
+          child: Padding(
+            padding: const EdgeInsets.only(
+                top: 8.0, bottom: 8.0, right: 15, left: 15),
+            child: SizedBox(
+              // padding: MediaQuery.of(context).viewInsets,
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height / 3+ 30,
+                child: Container(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Select status',style: GoogleFonts.montserrat(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 14,
+                        color: Colors.black
+                      ),),
+                      SizedBox(
+                        width: 47,
+                        child: Divider(
+                          thickness: 2,
+                          color: AppColors.primary,
+                        ),
+                      ),
+                      SizedBox(height: 8,),
+                      Container(
+                        width: MediaQuery.of(context).size.width,
+                        padding: EdgeInsets.symmetric(vertical: 12,horizontal: 16),
+                        color: Color(0xFFF5F5F5),
+                        child:  Text('Admin',style: GoogleFonts.poppins(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 18,
+                            color: Colors.black
+                        ),),
+                      ),
+                      SizedBox(height: 8,),
+                      Container(
+                        width: MediaQuery.of(context).size.width,
+                        padding: EdgeInsets.symmetric(vertical: 12,horizontal: 16),
+                        color: Color(0xFFF5F5F5),
+                        child:  Text('Admin',style: GoogleFonts.poppins(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 18,
+                            color: Colors.black
+                        ),),
+                      ),
+                    ],
+                  ),
+                ),
+        )
+          ),
+        );
+      });
 }

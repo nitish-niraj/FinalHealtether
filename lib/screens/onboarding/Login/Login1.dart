@@ -1,4 +1,6 @@
 import 'package:finalhealtether/ThemeUi/uitheme.dart';
+import 'package:finalhealtether/screens/onboarding/Register/Register1.dart';
+import 'package:finalhealtether/screens/onboarding/Register/SetUp.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 class Login1 extends StatelessWidget {
@@ -156,7 +158,9 @@ class Login1 extends StatelessWidget {
             SizedBox(height: 32*he,),
             SizedBox(
               width: wi*356,
-              child: ElevatedButton(onPressed: (){},
+              child: ElevatedButton(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>SetUp()));
+              },
                child: Text('Log me in',style: GoogleFonts.montserrat(
                  fontWeight: FontWeight.normal,
                  fontSize: 16*he,
@@ -184,24 +188,29 @@ class Login1 extends StatelessWidget {
                 ),
                 ),
                 SizedBox(width: 5*wi,),
-                Column(
-                  children: [
-                    Text(
-                      'Register here',style: GoogleFonts.poppins(
-                      fontSize: 16*he,
-                      fontWeight: FontWeight.normal,
-                      color: Color(0xFF5351C7),
-                    ),
-                    ),
-                    SizedBox(
-                      width: 117*wi,
-                      child: Divider(
-                        height: 0,
-                        thickness: 1,
+                InkWell(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Register1()));
+                  },
+                  child: Column(
+                    children: [
+                      Text(
+                        'Register here',style: GoogleFonts.poppins(
+                        fontSize: 16*he,
+                        fontWeight: FontWeight.normal,
                         color: Color(0xFF5351C7),
                       ),
-                    )
-                  ],
+                      ),
+                      SizedBox(
+                        width: 102*wi,
+                        child: Divider(
+                          height: 0,
+                          thickness: 1,
+                          color: Color(0xFF5351C7),
+                        ),
+                      )
+                    ],
+                  ),
                 )
               ],
             ),
