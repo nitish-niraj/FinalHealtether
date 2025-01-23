@@ -20,6 +20,8 @@ class _AddAppointState extends State<AddAppoint> {
   DateTime? _selectedDate;
   @override
   Widget build(BuildContext context) {
+    var he = MediaQuery.of(context).size.height/844;
+    var wi = MediaQuery.of(context).size.width/389;
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -91,7 +93,7 @@ class _AddAppointState extends State<AddAppoint> {
               Container(
                 height: 60,
                 color: Color(0xffF5F5F5),
-                width: 326,
+                width: wi*389,
                 child: Padding(
                   padding: const EdgeInsets.only(
                       top: 15, bottom: 10, left: 10, right: 30),
@@ -114,71 +116,75 @@ class _AddAppointState extends State<AddAppoint> {
               Visibility(
                 visible:
                     _isRowVisible, // Toggles visibility based on this state variable
-                child: Row(
-                  children: [
-                    SizedBox(
-                      width: 200,
-                      child: Text(
-                        'The number is already present in the directory. Do you want to add new patient?',
-                        style: GoogleFonts.montserrat(
-                          fontSize: 12,
-                          color: Colors.grey[800],
+                child: Container(
+                  width: wi*389,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      SizedBox(
+                        width: 200,
+                        child: Text(
+                          'The number is already present in the directory. Do you want to add new patient?',
+                          style: GoogleFonts.montserrat(
+                            fontSize: 12,
+                            color: Colors.grey[800],
+                          ),
                         ),
                       ),
-                    ),
-                    SizedBox(width: 10),
-                    GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          _isRowVisible = false;
-                        });
-                      },
-                      child: Container(
-                        width: 50,
-                        height: 40,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Color(0xff32856E),
-                        ),
-                        child: Center(
-                          child: Text(
-                            'Yes',
-                            style: GoogleFonts.montserrat(
-                              fontWeight: FontWeight.w500,
-                              fontSize: 16,
-                              color: Colors.white,
+                      SizedBox(width: 10),
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            _isRowVisible = false;
+                          });
+                        },
+                        child: Container(
+                          width: 50,
+                          height: 40,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Color(0xff32856E),
+                          ),
+                          child: Center(
+                            child: Text(
+                              'Yes',
+                              style: GoogleFonts.montserrat(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 16,
+                                color: Colors.white,
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
-                    SizedBox(width: 10),
-                    GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          _isRowVisible = false;
-                        });
-                      },
-                      child: Container(
-                        width: 50,
-                        height: 40,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Color(0xffF5F5F5),
-                        ),
-                        child: Center(
-                          child: Text(
-                            'No',
-                            style: GoogleFonts.montserrat(
-                              fontWeight: FontWeight.w500,
-                              fontSize: 16,
-                              color: Colors.black,
+                      SizedBox(width: 10),
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            _isRowVisible = false;
+                          });
+                        },
+                        child: Container(
+                          width: 50,
+                          height: 40,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Color(0xffF5F5F5),
+                          ),
+                          child: Center(
+                            child: Text(
+                              'No',
+                              style: GoogleFonts.montserrat(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 16,
+                                color: Colors.black,
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
               SizedBox(
@@ -187,7 +193,7 @@ class _AddAppointState extends State<AddAppoint> {
               Container(
                 height: 60,
                 color: Color(0xffF5F5F5),
-                width: 326,
+                  width: wi*389,
                 child: Padding(
                   padding: const EdgeInsets.only(
                       top: 15, bottom: 10, left: 10, right: 30),
@@ -237,11 +243,12 @@ class _AddAppointState extends State<AddAppoint> {
                     child: Container(
                       height: 60,
                       color: Color(0xffF5F5F5),
-                      width: 180,
+                      width: 190*wi,
                       child: Padding(
                         padding: const EdgeInsets.only(
                             top: 15, bottom: 10, left: 10, right: 30),
                         child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Expanded(
                               child: Text(
@@ -272,7 +279,7 @@ class _AddAppointState extends State<AddAppoint> {
                   Container(
                     height: 60,
                     color: Color(0xffF5F5F5),
-                    width: 134,
+                    width: 144*wi,
                     child: Padding(
                       padding: const EdgeInsets.only(
                           top: 15, bottom: 10, left: 10, right: 30),
@@ -296,7 +303,7 @@ class _AddAppointState extends State<AddAppoint> {
               Container(
                 height: 60,
                 color: Color(0xffF5F5F5),
-                width: 326,
+                width: wi*389,
                 child: Padding(
                   padding: const EdgeInsets.only(
                       top: 15, bottom: 10, left: 10, right: 30),
@@ -396,7 +403,7 @@ class _AddAppointState extends State<AddAppoint> {
                 child: Center(
                   child: Container(
                     height: 62,
-                    width: 262,
+                 width: wi*389,
                     decoration: BoxDecoration(
                       color: genderText != null &&
                               _selectedDate != null &&
@@ -445,7 +452,7 @@ class _AddAppointState extends State<AddAppoint> {
                 child: Center(
                   child: Container(
                     height: 62,
-                    width: 262,
+                    width: 262*wi,
                     decoration: BoxDecoration(
                       color: Color(0xffF8F7FC),
                       borderRadius: BorderRadius.circular(6),

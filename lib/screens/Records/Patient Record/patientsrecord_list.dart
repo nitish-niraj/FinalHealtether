@@ -3,6 +3,8 @@ import 'package:finalhealtether/screens/Records/Widget/PatientsRecordlistWidget.
 import '../../../ThemeUi/uitheme.dart';
 import 'package:flutter/material.dart';
 
+import 'Add new Patient/Addnewpatient1.dart';
+
 class PatientRecords extends StatefulWidget {
   const PatientRecords({super.key});
 
@@ -132,6 +134,7 @@ class _PatientRecordsState extends State<PatientRecords> {
                         ),
                       ),
                       onPressed: () {
+                       Navigator.push(context, MaterialPageRoute(builder: (context)=>AddNewPatient1()));
                       },
                       child: Text(
                         'Add member',

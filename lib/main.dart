@@ -1,6 +1,5 @@
 import 'package:finalhealtether/screens/Home/Screens/HomeScreen/home_screen.dart';
 import 'package:flutter/material.dart';
-
 import 'ThemeUi/uitheme.dart';
 
 void main() {
@@ -18,4 +17,5 @@ class MyApp extends StatelessWidget {
       home: HomeScreen(),
     );
   }
+
 }

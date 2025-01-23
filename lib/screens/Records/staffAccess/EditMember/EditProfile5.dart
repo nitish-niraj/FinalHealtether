@@ -1,4 +1,5 @@
 import 'package:finalhealtether/ThemeUi/uitheme.dart';
+import 'package:finalhealtether/screens/Records/staffAccess/AddMember/Member_Profile.dart';
 import 'package:flutter/material.dart';
 
 
@@ -485,11 +486,11 @@ class _EditProfile5State extends State<EditProfile5> {
                       ),
                     ),
                     InkWell(
-                      //        onTap: () {
+                             onTap: () {
 
-                      //            Navigator.push(context, MaterialPageRoute(builder: (context) => Member_Profile()));
+                                 Navigator.push(context, MaterialPageRoute(builder: (context) => MemberProfile()));
 
-                      // },
+                      },
                       child: Container(
 
                         padding: EdgeInsets.fromLTRB(158*fem, 19*fem, 141.25*fem, 19*fem),

@@ -20,7 +20,7 @@ class _EditPatientProfile3State extends State<EditPatientProfile3> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Add Member',
+          'Edit Profile',
           style: TextStyle(
             color: Colors.black,
             fontSize: 20,

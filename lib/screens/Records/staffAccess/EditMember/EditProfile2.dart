@@ -1,4 +1,5 @@
 import 'package:finalhealtether/ThemeUi/uitheme.dart';
+import 'package:finalhealtether/screens/Records/staffAccess/EditMember/EditProfile3.dart';
 import 'package:flutter/material.dart';
 
 class EditProfile2 extends StatefulWidget {
@@ -550,10 +551,10 @@ class _EditProfile2State extends State<EditProfile2> {
                         ),
                         InkWell(
                           onTap: () {
-                            // Navigator.push(
-                            //     context,
-                            //     MaterialPageRoute(
-                            //         builder: (context) => Edit_MemberScreen1()));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => EditProfile3()));
                           },
                           child: Container(
                             // buttonsBru (126:4854)

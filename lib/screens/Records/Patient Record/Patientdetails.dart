@@ -1,3 +1,5 @@
+import 'package:finalhealtether/screens/Records/Patient%20Record/AddPrescription.dart';
+import 'package:finalhealtether/screens/Records/Patient%20Record/EditPatientProfile/EditPatientProfile1.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -105,38 +107,48 @@ class _PatientdetailsState extends State<Patientdetails> {
                               ),
                               Row(
                                 children: [
-                                  Container(
-                                    alignment: Alignment.center,
-                                    padding: EdgeInsets.symmetric(
-                                        vertical: 4, horizontal: 8),
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(6),
-                                        color: Color(0xFFF8F7FC)
-                                    ),
-                                    child: Text(
-                                      'Edit Profile',
-                                      style: GoogleFonts.arimo(
-                                        fontSize: wi*0.034,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.black,
+                                  InkWell(
+                                  onTap: (){
+                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>EditPatientProfile1()));
+                                  },
+                                    child: Container(
+                                      alignment: Alignment.center,
+                                      padding: EdgeInsets.symmetric(
+                                          vertical: 4, horizontal: 8),
+                                      decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(6),
+                                          color: Color(0xFFF8F7FC)
+                                      ),
+                                      child: Text(
+                                        'Edit Profile',
+                                        style: GoogleFonts.arimo(
+                                          fontSize: wi*0.034,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.black,
+                                        ),
                                       ),
                                     ),
                                   ),
                                   SizedBox(width: 12,),
-                                  Container(
-                                    alignment: Alignment.center,
-                                    padding: EdgeInsets.symmetric(
-                                        vertical: 4, horizontal: 8),
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(6),
-                                        color: AppColors.primary
-                                    ),
-                                    child: Text(
-                                      'Start consultation',
-                                      style: GoogleFonts.arimo(
-                                        fontSize:  wi*0.034,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white,
+                                  InkWell(
+                                    onTap: (){
+                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>AddPrescription()));
+                                    },
+                                    child: Container(
+                                      alignment: Alignment.center,
+                                      padding: EdgeInsets.symmetric(
+                                          vertical: 4, horizontal: 8),
+                                      decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(6),
+                                          color: AppColors.primary
+                                      ),
+                                      child: Text(
+                                        'Start consultation',
+                                        style: GoogleFonts.arimo(
+                                          fontSize:  wi*0.034,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white,
+                                        ),
                                       ),
                                     ),
                                   ),

@@ -1,3 +1,4 @@
+import 'package:finalhealtether/screens/Records/staffAccess/EditMember/EditProfile5.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../ThemeUi/uitheme.dart';
@@ -574,7 +575,7 @@ class _EditProfile4State extends State<EditProfile4> {
                         ),
                         InkWell(
                           onTap: (){
-                            // Navigator.push(context, MaterialPageRoute(builder: (context) => Edit_MemberScreen3()));
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => EditProfile5()));
                           },
                           child: Container(
                             // buttonsHQ1 (126:5157)

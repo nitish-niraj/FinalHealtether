@@ -1,5 +1,10 @@
+import 'package:finalhealtether/screens/Home/Screens/HomeScreen/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../../../ThemeUi/uitheme.dart';
+import '../../Home/Screens/AppointmentScreen/appointment_screen.dart';
+import '../../misc/Notifications/Notifications.dart';
+import '../../misc/WhatsappChat/ChatList.dart';
 import 'appointment_details.dart';
 
 class Appointment extends StatefulWidget {
@@ -27,57 +32,60 @@ class _AppointmentState extends State<Appointment>
 
   @override
   Widget build(BuildContext context) {
+    var he = MediaQuery.of(context).size.height/844;
+    var wi = MediaQuery.of(context).size.width/389;
     double baseWidth = 390;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
     return Scaffold(
-        floatingActionButton: Container(
-          width: 100,
-            margin: EdgeInsets.symmetric(vertical: 10,horizontal: 0),
-            padding: EdgeInsets.all(20),
+      floatingActionButton: Container(
+          width: 72*wi,
+          margin: EdgeInsets.symmetric(vertical: 10,horizontal: 10),
+          padding: EdgeInsets.all(20),
           decoration: BoxDecoration(
-            color: AppColors.primary,
-            shape: BoxShape.circle
+              color: AppColors.primary,
+              shape: BoxShape.circle
           ),
+          child: InkWell(
+             onTap: (){
+               Navigator.push(context, MaterialPageRoute(builder: (context)=>AddAppoint ()));
+             },
             child: ClipOval(
                 child: Image.asset(
-          'assets/images/floatadd.png',
-                  fit: BoxFit.contain,
-        ))),
+                  'assets/images/floatadd.png',
+                  fit: BoxFit.contain,height: 30*he,
+                )),
+          )),
+        appBar: AppBar(
+          title: const Text(
+            'Appointments',
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 20,
+              fontFamily: 'Poppins',
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+
+          backgroundColor: Colors.white,
+          elevation: 0,
+          leading: IconButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              icon: const Icon(
+                Icons.arrow_back,
+                color: Colors.black,
+              )),
+        ),
         body: SafeArea(
           child: SingleChildScrollView(
             child: Padding(
               padding: EdgeInsets.only(top: 15.0, left: 28, right: 28),
               child: Column(
                 children: [
-                  Container(
-                    width: 335,
-                    height: 33,
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          child: Row(
-                            children: [
-                              Text(
-                                'Appointments',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 20,
-                                  fontFamily: 'Poppins',
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 12, bottom: 12),
+                    padding: const EdgeInsets.only(top: 0, bottom: 12),
                     child: Container(
                       width: 335,
                       height: 59,
@@ -89,20 +97,18 @@ class _AppointmentState extends State<Appointment>
                           borderRadius: BorderRadius.circular(7),
                         ),
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 8.0),
-                        child: TextFormField(
-                          controller: null,
-                          decoration: InputDecoration(
-                              labelText: "Quick Search",
-                              border: InputBorder.none),
-                          style: TextStyle(
-                            color: Color(0xFF6A798A),
-                            fontSize: 16,
-                            fontStyle: FontStyle.italic,
-                            fontFamily: 'Poppins',
-                            fontWeight: FontWeight.w400,
-                          ),
+                      child: TextFormField(
+                        controller: null,
+                        decoration: InputDecoration(
+                           prefixIcon: Icon(Icons.search),
+                            labelText: "Quick Search",
+                            border: InputBorder.none),
+                        style: TextStyle(
+                          color: Color(0xFF6A798A),
+                          fontSize: 16,
+                          fontStyle: FontStyle.italic,
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.w400,
                         ),
                       ),
                     ),
@@ -516,6 +522,172 @@ class _AppointmentState extends State<Appointment>
               ),
             ),
           ),
-        ));
+        ),
+      bottomNavigationBar: BottomBar(),
+    );
+  }
+}
+
+
+class BottomBar extends StatefulWidget {
+  const BottomBar({super.key});
+
+  @override
+  State<BottomBar> createState() => _BottomBarState();
+}
+
+class _BottomBarState extends State<BottomBar> {
+  int _selectedIndex = 1; // Index of the selected card, -1 means none selected
+
+  void _selectCard(int index) {
+    setState(() {
+      if (_selectedIndex != 0 && index != _selectedIndex) {
+        // Deselect the previously selected card
+        _selectedIndex = -1;
+      } else {
+        // Select the tapped card (Home card)
+        _selectedIndex = index;
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 80,
+      width: double.infinity,
+      decoration: BoxDecoration(
+        color: Color(0xffF8F7FC),
+        boxShadow: [
+          BoxShadow(
+            color: Color(0xff6CEBC6).withOpacity(0.5),
+            blurRadius: 25,
+          ),
+        ],
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          InkWell(
+            onTap: () => setState(() {
+              _selectedIndex = 0;
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) {
+                return HomeScreen();
+              }));
+            }),
+            child: Container(
+              height: 60,
+              width: 60,
+              decoration: BoxDecoration(
+                color: _selectedIndex == 0
+                    ? Color(0xff6CEBC6)
+                    : Colors.transparent,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset('assets/homeimages/Group.png'),
+                  Text(
+                    'Home',
+                    style: GoogleFonts.montserrat(fontSize: 10),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          InkWell(
+            onTap: () {
+              setState(() {
+                _selectedIndex = 1;
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) {
+                  return Appointment();
+                }));
+              });
+            },
+            child: Container(
+              height: 60,
+              width: 84,
+              decoration: BoxDecoration(
+                color: _selectedIndex == 1
+                    ? Color(0xff6CEBC6)
+                    : Colors.transparent,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset('assets/homeimages/Group (1).png'),
+                  Text(
+                    'Appointments',
+                    style: GoogleFonts.montserrat(fontSize: 10),
+                  )
+                ],
+              ),
+            ),
+          ),
+          InkWell(
+            onTap: () => setState(() {
+              _selectedIndex = 2;
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) {
+                return ChatList();
+              }));
+            }),
+            child: Container(
+              height: 60,
+              width: 60,
+              decoration: BoxDecoration(
+                color: _selectedIndex == 2
+                    ? Color(0xff6CEBC6)
+                    : Colors.transparent,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset('assets/homeimages/Vector (4).png'),
+                  Text(
+                    'Chat',
+                    style: GoogleFonts.montserrat(fontSize: 10),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          InkWell(
+            onTap: () => setState(() {
+              _selectedIndex = 3;
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) {
+                return Notifications();
+              }));
+            }),
+            child: Container(
+              height: 60,
+              width: 84,
+              decoration: BoxDecoration(
+                color: _selectedIndex == 3
+                    ? Color(0xff6CEBC6)
+                    : Colors.transparent,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset('assets/homeimages/Vector (5).png'),
+                  Text(
+                    'Notifications',
+                    style: GoogleFonts.montserrat(fontSize: 10),
+                  )
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

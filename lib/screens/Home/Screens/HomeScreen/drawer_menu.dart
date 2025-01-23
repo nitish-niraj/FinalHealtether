@@ -1,4 +1,4 @@
-import 'package:finalhealtether/screens/Home/Screens/UserProfile/settings_page.dart';
+import 'package:finalhealtether/screens/Home/Screens/UserProfile/Profile%20settings/settings_page.dart';
 import 'package:finalhealtether/screens/Home/Screens/Widgets/profile_menu_containers.dart';
 import 'package:finalhealtether/screens/Home/Screens/HomeScreen/appointment_analysis.dart';
 import 'package:finalhealtether/screens/Home/Screens/HomeScreen/feedback_page.dart';

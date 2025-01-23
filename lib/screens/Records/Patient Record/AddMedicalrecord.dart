@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../ThemeUi/uitheme.dart';
+import 'Procedurerecords.dart';
 
 class AddMedicalrecord extends StatefulWidget {
   const AddMedicalrecord({super.key});
@@ -136,7 +137,9 @@ class _AddMedicalrecordState extends State<AddMedicalrecord> {
                 Container(
                   width: wi,
                   child: ElevatedButton(
-                    onPressed: (){},
+                    onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>ProcedureRecords()));
+                    },
                     child: Text(
                       'NEXT',
                       style: TextStyle(

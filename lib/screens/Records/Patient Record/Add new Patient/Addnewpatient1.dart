@@ -1,3 +1,4 @@
+import 'package:finalhealtether/screens/Records/Patient%20Record/Add%20new%20Patient/Addnewpatient2.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -591,11 +592,11 @@ class _AddNewPatient1State extends State<AddNewPatient1> {
                         ),
                         InkWell(
                           onTap: () {
-                            // Navigator.push(
-                            //     context,
-                            //     MaterialPageRoute(
-                            //         builder: (context) =>
-                            //             ));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>AddNewPatient2()
+                                        ));
                           },
                           child: Container(
                             // buttonsBru (126:4854)

@@ -2,18 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
-class NotificationSettings extends StatefulWidget {
-  NotificationSettings({super.key});
+class PermissionsSettings extends StatefulWidget {
+  PermissionsSettings({super.key});
 
   @override
-  State<NotificationSettings> createState() => _NotificationSettingsState();
+  State<PermissionsSettings> createState() => _PermissionsSettingsState();
 }
 
-class _NotificationSettingsState extends State<NotificationSettings> {
+class _PermissionsSettingsState extends State<PermissionsSettings> {
   bool light1 = false;
   bool light2 = false;
+  bool light3 = false;
   @override
   Widget build(BuildContext context) {
+    var he = MediaQuery.of(context).size.height/844;
+    var wi = MediaQuery.of(context).size.width/389;
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -51,7 +54,7 @@ class _NotificationSettingsState extends State<NotificationSettings> {
               Column(
                 children: [
                   Text(
-                    'NOTIFICATIONS',
+                    'APP PERMISSIONS',
                     style: GoogleFonts.montserrat(
                       fontWeight: FontWeight.w600,
                       fontSize: 15,
@@ -59,7 +62,7 @@ class _NotificationSettingsState extends State<NotificationSettings> {
                   ),
                   Padding(
                     padding: EdgeInsets.only(
-                      right: 70.0,
+                      right: 94.0,
                     ),
                     child: SizedBox(
                       height: 5,
@@ -81,9 +84,9 @@ class _NotificationSettingsState extends State<NotificationSettings> {
                   Row(
                     children: [
                       SizedBox(
-                        width: 260,
+                        width: wi*290,
                         child: Text(
-                          'Allow app to send you notifications about payments, appointments.',
+                          'Contacts and Message Syncing',
                           style: GoogleFonts.montserrat(
                             fontSize: 15,
                             fontWeight: FontWeight.w600,
@@ -111,12 +114,9 @@ class _NotificationSettingsState extends State<NotificationSettings> {
                     ],
                   ),
                   SizedBox(
-                    height: 8,
-                  ),
-                  SizedBox(
                     width: 290,
                     child: Text(
-                      'Ensure that your app notifications are enabled to receive timely updates.',
+                      'Allow access to your contacts and messaging app for a convenient and integrated experience.',
                       style: GoogleFonts.montserrat(
                           fontSize: 13,
                           fontWeight: FontWeight.w600,
@@ -126,7 +126,7 @@ class _NotificationSettingsState extends State<NotificationSettings> {
                 ],
               ),
               SizedBox(
-                height: 30,
+                height: 25,
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -134,9 +134,9 @@ class _NotificationSettingsState extends State<NotificationSettings> {
                   Row(
                     children: [
                       SizedBox(
-                        width: 260,
+                        width: wi*290,
                         child: Text(
-                          'Allow notifications about the app updates.',
+                          'Allow Camera Access',
                           style: GoogleFonts.montserrat(
                             fontSize: 15,
                             fontWeight: FontWeight.w600,
@@ -144,10 +144,10 @@ class _NotificationSettingsState extends State<NotificationSettings> {
                         ),
                       ),
                       Switch(
-                        value: light1,
+                        value: light2,
                         onChanged: (bool value) {
                           setState(() {
-                            light1 = value;
+                            light2 = value;
                           });
                         },
                         trackColor: MaterialStatePropertyAll<Color>(
@@ -164,12 +164,59 @@ class _NotificationSettingsState extends State<NotificationSettings> {
                     ],
                   ),
                   SizedBox(
-                    height: 8,
+                    width: wi*290,
+                    child: Text(
+                      "This is enable the app to use your device's camera for capturing photos of documents to upload medical records or documents securely within the app.",
+                      style: GoogleFonts.montserrat(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.grey),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 25,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      SizedBox(
+                        width: wi*290,
+                        child: Text(
+                          'Third-Party Permissions',
+                          style: GoogleFonts.montserrat(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                      Switch(
+                        value: light3,
+                        onChanged: (bool value) {
+                          setState(() {
+                            light3 = value;
+                          });
+                        },
+                        trackColor: MaterialStatePropertyAll<Color>(
+                            Colors.grey.shade300),
+                        thumbColor: MaterialStateProperty.resolveWith((states) {
+                          if (states.contains(MaterialState.selected)) {
+                            return Color(
+                                0xff5351C7); // Color when the switch is active
+                          }
+                          return Colors
+                              .grey; // Color when the switch is inactive
+                        }),
+                      ),
+                    ],
                   ),
                   SizedBox(
                     width: 290,
                     child: Text(
-                      'Get instant updates an latest features, improvements, and announcemnets.',
+                      'Some features may require access to third-party services for enhanced functionality.',
                       style: GoogleFonts.montserrat(
                           fontSize: 13,
                           fontWeight: FontWeight.w600,
